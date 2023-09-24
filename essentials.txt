@@ -40,6 +40,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
 source ~/.bashrc
+source ~/.asdf/asdf.sh
 asdf --version
 
 asdf plugin add nodejs
@@ -59,3 +60,16 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 && sudo apt update \
 && sudo apt install gh -y
+
+sudo apt update
+sudo apt install make
+
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.39.3_amd64.deb
+sudo dpkg -i mongodb-compass_1.39.3_amd64.deb
+mongodb-compass
+
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update && sudo apt-get install spotify-client
+
+
