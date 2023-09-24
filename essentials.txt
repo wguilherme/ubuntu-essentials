@@ -75,4 +75,14 @@ sudo apt-get update && sudo apt-get install spotify-client
 sudo apt-get update
 sudo apt-get install docker-compose-plugin
 
+sudo apt  install docker-compose
+
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" | sudo tee /etc/apt/sources.list.d/lens.list > /dev/null
+sudo apt update
+sudo apt install lens
+
+
+sudo usermod -aG docker ${USER}
+sudo chmod 666 /var/run/docker.sock
+sudo su $USER  -c groups
 
