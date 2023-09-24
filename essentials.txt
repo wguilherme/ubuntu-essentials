@@ -39,5 +39,23 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
+source ~/.bashrc
+asdf --version
 
+asdf plugin add nodejs
+asdf install nodejs 18.18.0
+asdf global nodejs 18.18.0
+node --version
 
+npm install -g pnpm
+pnpm --version
+
+npm install -g yarn
+yarn --version
+
+type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
