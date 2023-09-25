@@ -86,3 +86,6 @@ sudo usermod -aG docker ${USER}
 sudo chmod 666 /var/run/docker.sock
 sudo su $USER  -c groups
 
+sudo apt install indicator-multiload
+indicator-multiload
+
