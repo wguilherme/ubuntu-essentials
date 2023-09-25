@@ -89,3 +89,9 @@ sudo su $USER  -c groups
 sudo apt install indicator-multiload
 indicator-multiload
 
+sudo apt install net-tools
+
+sudo systemctl stop apache2
+
+sudo apt update
+sudo apt install helm
